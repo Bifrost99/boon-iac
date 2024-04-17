@@ -1,0 +1,9 @@
+#  Local .terraform directories
+**/.terraform/*
+**/tmp/*.zip
+# .tfstate files
+*.tfstate
+*.tfstate.*
+**/.idea
+.idea
+
