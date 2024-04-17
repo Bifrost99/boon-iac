@@ -1,41 +1,17 @@
-variable "postgres_engine_version" {
-  description = "Enginer version for postgresql"
-  default     = "13.3"
-}
-
-variable "postgres_instance_classe" {
-  description = "Instance class for rds instance"
-  default     = "db.t2.micro"
-}
-
-variable "postgres_allocated_storage" {
-  description = "Allocated storage for postgres"
-  default     = "20"
-}
-
-variable "postgres_max_allocated_storage" {
-  description = "Maximum allocated storage for postgres"
-  default     = "2000"
-}
-
-variable "postgres_name" {
-  description = "Name of db instance"
-  default     = "boon"
-}
-
-variable "postgres_username" {
-  description = "Username of db instance"
-  default     = "boon"
-}
-
-variable "postgres_multi_az " {
-  description = "Multi az for postgres"
-  type        = bool
-  default     = false
-}
-
-variable "postgres_storage_encrypted" {
-  description = "storage encription for postgres"
-  type        = bool
-  default     = false
+rds_settings = {
+  postgres_engine_version = "13.3"
+  identifier              = "boon-rds"
+  family                  = "postgres14"
+  db_name                 = "boon"
+  engine                  = "postgres"
+  engine_version          = "14"
+  instance_class          = "db.t3.micro"
+  allocated_storage       = "20"
+  max_allocated_storage   = "2000"
+  username                = "boon"
+  multi_az                = "false"
+  storage_encrypted       = "false"
+  backup_retention_period = "7"
+  maintenance_window      = "Mon:00:00-Mon:03:00"
+  backup_window           = "03:00-06:00"
 }
